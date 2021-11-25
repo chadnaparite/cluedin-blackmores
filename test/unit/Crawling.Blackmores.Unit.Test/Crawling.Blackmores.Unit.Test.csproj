@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Blackmores.Core\Crawling.Blackmores.Core.csproj" />
+    <ProjectReference Include="..\..\..\src\Blackmores.Crawling\Crawling.Blackmores.csproj" />
+    <ProjectReference Include="..\..\..\src\Blackmores.Infrastructure\Crawling.Blackmores.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>
