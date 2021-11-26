@@ -19,15 +19,15 @@ namespace CluedIn.Crawling.Blackmores.ClueProducers
         protected override Clue MakeClueImpl(DemandGroup input, Guid accountId)
         {
             var demandgroupVocabulary = new DemandGroupVocabulary();
-            var clue = factory.Create(demandgroupVocabulary.Grouping, input.DemandGroupName.ToString(), accountId);
+            var clue = factory.Create(demandgroupVocabulary.Grouping, input.Name.ToString(), accountId);
             var data = clue.Data.EntityData;
 
             // TODO: Uncomment or delete as appropriate for the different properties
-            if (input.DemandGroupName != null)
+            if (input.Name != null)
             {
-                data.Name = input.DemandGroupName;
-                data.DisplayName = input.DemandGroupName;
-                data.Description = input.DemandGroupName;
+                data.Name = input.Name;
+                data.DisplayName = input.Name;
+                data.Description = input.Name;
             }
 
             // TODO: Example of Updated, Modified date being parsed through DateTimeOffset.
@@ -68,9 +68,9 @@ namespace CluedIn.Crawling.Blackmores.ClueProducers
 
             //TODO: Mapping data into general properties metadata bag.
             //TODO: You should make sure as much data is mapped into specific metadata fields, rather than general .properties. bag.
-            data.Properties[demandgroupVocabulary.DemandGroupName] = input.DemandGroupName.PrintIfAvailable();
-            data.Properties[demandgroupVocabulary.DimDemandGroupSk] = input.DimDemandGroupSk.PrintIfAvailable();
-            data.Properties[demandgroupVocabulary.DemandGroupNameTpm] = input.DemandGroupNameTpm.PrintIfAvailable();
+            data.Properties[demandgroupVocabulary.Name] = input.Name.PrintIfAvailable();
+            data.Properties[demandgroupVocabulary.DimKey] = input.DimKey.PrintIfAvailable();
+            data.Properties[demandgroupVocabulary.NameTPM] = input.NameTpm.PrintIfAvailable();
             data.Properties[demandgroupVocabulary.Region] = input.Region.PrintIfAvailable();
             data.Properties[demandgroupVocabulary.BusinessUnit] = input.BusinessUnit.PrintIfAvailable();
 

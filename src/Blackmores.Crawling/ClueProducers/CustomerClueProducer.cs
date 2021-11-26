@@ -19,15 +19,15 @@ namespace CluedIn.Crawling.Blackmores.ClueProducers
         protected override Clue MakeClueImpl(Customer input, Guid accountId)
         {
             var customerVocabulary = new CustomerVocabulary();
-            var clue = factory.Create(customerVocabulary.Grouping, input.CustomerId.ToString(), accountId);
+            var clue = factory.Create(customerVocabulary.Grouping, input.Id.ToString(), accountId);
             var data = clue.Data.EntityData;
 
             // TODO: Uncomment or delete as appropriate for the different properties
-            if (input.CustomerName != null)
+            if (input.Name != null)
             {
-                data.Name = input.CustomerName;
-                data.DisplayName = input.CustomerName;
-                data.Description = input.CustomerName;
+                data.Name = input.Name;
+                data.DisplayName = input.Name;
+                data.Description = input.Name;
             }
 
             // TODO: Example of Updated, Modified date being parsed through DateTimeOffset.
@@ -67,13 +67,13 @@ namespace CluedIn.Crawling.Blackmores.ClueProducers
 
             //TODO: Mapping data into general properties metadata bag.
             //TODO: You should make sure as much data is mapped into specific metadata fields, rather than general .properties. bag.
-            data.Properties[customerVocabulary.CustomerId] = input.CustomerId.PrintIfAvailable();
+            data.Properties[customerVocabulary.Id] = input.Id.PrintIfAvailable();
             data.Properties[customerVocabulary.DemandGroup] = input.DemandGroup.PrintIfAvailable();
-            data.Properties[customerVocabulary.CustomerName] = input.CustomerName.PrintIfAvailable();
-            data.Properties[customerVocabulary.BannerSk] = input.BannerSk.PrintIfAvailable();
-            data.Properties[customerVocabulary.DimCustomerSk] = input.DimCustomerSk.PrintIfAvailable();
-            data.Properties[customerVocabulary.CustomerSiteId] = input.CustomerSiteId.PrintIfAvailable();
-            data.Properties[customerVocabulary.CustomerSiteName] = input.CustomerSiteName.PrintIfAvailable();
+            data.Properties[customerVocabulary.Name] = input.Name.PrintIfAvailable();
+            data.Properties[customerVocabulary.BannerKey] = input.BannerKey.PrintIfAvailable();
+            data.Properties[customerVocabulary.DimKey] = input.DimKey.PrintIfAvailable();
+            data.Properties[customerVocabulary.SiteId] = input.SiteId.PrintIfAvailable();
+            data.Properties[customerVocabulary.SiteName] = input.SiteName.PrintIfAvailable();
             data.Properties[customerVocabulary.Channel] = input.Channel.PrintIfAvailable();
             data.Properties[customerVocabulary.DemandGroup] = input.DemandGroup.PrintIfAvailable();
             data.Properties[customerVocabulary.Country] = input.Country.PrintIfAvailable();

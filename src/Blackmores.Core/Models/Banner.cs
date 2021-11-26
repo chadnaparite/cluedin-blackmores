@@ -4,22 +4,11 @@ namespace CluedIn.Crawling.Blackmores.Core.Models
 {
     public class Banner 
     {
-        [JsonProperty("BannerName")]
-        public string BannerName { get; set; }
-
-        [JsonProperty("BannerSK")]
-        public string BannerSk { get; set; }
-
-        [JsonProperty("DimBannerSK")]
-        public string DimBannerSk { get; set; }
-
-        [JsonProperty("BannerCode")]
-        public string BannerCode { get; set; }
-
-        [JsonProperty("SourceRegion")]
+        public string Name { get; set; }
+        public string Key { get; set; }
+        public string DimKey { get; set; }
+        public string Code { get; set; }
         public string SourceRegion { get; set; }
-
-        [JsonProperty("SourceProvider")]
         public string SourceProvider { get; set; }
     }
 }

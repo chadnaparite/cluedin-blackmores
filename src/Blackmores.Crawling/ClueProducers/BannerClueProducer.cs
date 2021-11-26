@@ -19,15 +19,15 @@ namespace CluedIn.Crawling.Blackmores.ClueProducers
         protected override Clue MakeClueImpl(Banner input, Guid accountId)
         {
             var bannerVocabulary = new BannerVocabulary();
-            var clue = factory.Create(bannerVocabulary.Grouping, input.BannerName.ToString(), accountId);
+            var clue = factory.Create(bannerVocabulary.Grouping, input.Key.ToString(), accountId);
             var data = clue.Data.EntityData;
 
             // TODO: Uncomment or delete as appropriate for the different properties
-            if (input.BannerName != null)
+            if (input.Name != null)
             {
-                data.Name = input.BannerName;
-                data.DisplayName = input.BannerName;
-                data.Description = input.BannerName;
+                data.Name = input.Name;
+                data.DisplayName = input.Name;
+                data.Description = input.Name;
             }
 
             // TODO: Example of Updated, Modified date being parsed through DateTimeOffset.
@@ -68,10 +68,10 @@ namespace CluedIn.Crawling.Blackmores.ClueProducers
 
             //TODO: Mapping data into general properties metadata bag.
             //TODO: You should make sure as much data is mapped into specific metadata fields, rather than general .properties. bag.
-            data.Properties[bannerVocabulary.BannerName] = input.BannerName.PrintIfAvailable();
-            data.Properties[bannerVocabulary.BannerSk] = input.BannerSk.PrintIfAvailable();
-            data.Properties[bannerVocabulary.DimBannerSk] = input.DimBannerSk.PrintIfAvailable();
-            data.Properties[bannerVocabulary.BannerCode] = input.BannerCode.PrintIfAvailable();
+            data.Properties[bannerVocabulary.Name] = input.Name.PrintIfAvailable();
+            data.Properties[bannerVocabulary.Key] = input.Key.PrintIfAvailable();
+            data.Properties[bannerVocabulary.DimKey] = input.DimKey.PrintIfAvailable();
+            data.Properties[bannerVocabulary.Code] = input.Code.PrintIfAvailable();
             data.Properties[bannerVocabulary.SourceRegion] = input.SourceRegion.PrintIfAvailable();
             data.Properties[bannerVocabulary.SourceProvider] = input.SourceProvider.PrintIfAvailable();
 

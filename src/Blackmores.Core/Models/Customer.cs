@@ -4,37 +4,16 @@ namespace CluedIn.Crawling.Blackmores.Core.Models
 {
     public class Customer 
     {
-        [JsonProperty("CustomerID")]
-        public string CustomerId { get; set; }
-
-        [JsonProperty("DemandGroup")]
+        public string Id { get; set; }
         public string DemandGroup { get; set; }
-
-        [JsonProperty("CustomerName")]
-        public string CustomerName { get; set; }
-
-        [JsonProperty("BannerSK")]
-        public string BannerSk { get; set; }
-
-        [JsonProperty("DimCustomerSK")]
-        public string DimCustomerSk { get; set; }
-
-        [JsonProperty("CustomerSiteID")]
-        public string CustomerSiteId { get; set; }
-
-        [JsonProperty("CustomerSiteName")]
-        public string CustomerSiteName { get; set; }
-
-        [JsonProperty("Channel")]
+        public string Name { get; set; }
+        public string BannerKey { get; set; }
+        public string DimKey { get; set; }
+        public string SiteId { get; set; }
+        public string SiteName { get; set; }
         public string Channel { get; set; }
-
-        [JsonProperty("Country")]
         public string Country { get; set; }
-
-        [JsonProperty("SourceRegion")]
         public string SourceRegion { get; set; }
-
-        [JsonProperty("SourceProvider")]
         public string SourceProvider { get; set; }
     }
 }
