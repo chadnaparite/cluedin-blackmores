@@ -15,5 +15,6 @@ namespace CluedIn.Crawling.Blackmores.Core.Models
         public string Country { get; set; }
         public string SourceRegion { get; set; }
         public string SourceProvider { get; set; }
+        public string DemandGroupCode { get; set; }
     }
 }

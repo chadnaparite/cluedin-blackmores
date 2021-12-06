@@ -16,21 +16,24 @@ namespace CluedIn.Crawling.Blackmores.Vocabularies
             //TODO: Make sure that any properties mapped into CluedIn Vocabulary are not in the group.
             AddGroup("Blackmores Banner Details", group =>
             {
+                Index = group.Add(new VocabularyKey("Index", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 Name = group.Add(new VocabularyKey("Name", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 Key = group.Add(new VocabularyKey("Key", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 DimKey = group.Add(new VocabularyKey("DimKey", "Dim Key", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 Code = group.Add(new VocabularyKey("Code", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 SourceRegion = group.Add(new VocabularyKey("SourceRegion", "Source Region", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 SourceProvider = group.Add(new VocabularyKey("SourceProvider", "Source Provider", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
-                
+                DemandGroupCode = group.Add(new VocabularyKey("DemandGroupCode", "Demand Group Code", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
             });
         }
 
+        public VocabularyKey Index { get; private set; }
         public VocabularyKey Name { get; private set; }
         public VocabularyKey Key { get; private set; }
         public VocabularyKey DimKey { get; private set; }
         public VocabularyKey Code { get; private set; }
         public VocabularyKey SourceRegion { get; private set; }
         public VocabularyKey SourceProvider { get; private set; }
+        public VocabularyKey DemandGroupCode { get; private set; }
     }
 }

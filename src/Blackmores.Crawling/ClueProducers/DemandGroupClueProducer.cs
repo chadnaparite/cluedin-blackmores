@@ -68,6 +68,7 @@ namespace CluedIn.Crawling.Blackmores.ClueProducers
 
             //TODO: Mapping data into general properties metadata bag.
             //TODO: You should make sure as much data is mapped into specific metadata fields, rather than general .properties. bag.
+            data.Properties[demandgroupVocabulary.Code] = input.Code.PrintIfAvailable();
             data.Properties[demandgroupVocabulary.Name] = input.Name.PrintIfAvailable();
             data.Properties[demandgroupVocabulary.DimKey] = input.DimKey.PrintIfAvailable();
             data.Properties[demandgroupVocabulary.NameTPM] = input.NameTpm.PrintIfAvailable();

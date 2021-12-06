@@ -27,7 +27,7 @@ namespace CluedIn.Crawling.Blackmores.Vocabularies
                 Country = group.Add(new VocabularyKey("Country", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 SourceRegion = group.Add(new VocabularyKey("SourceRegion", "Source Region", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 SourceProvider = group.Add(new VocabularyKey("SourceProvider", "Source Provider", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
-                
+                DemandGroupCode = group.Add(new VocabularyKey("DemandGroupCode", "Demand Group Code", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
             });
         }
 
@@ -42,6 +42,7 @@ namespace CluedIn.Crawling.Blackmores.Vocabularies
         public VocabularyKey Country { get; private set; }
         public VocabularyKey SourceRegion { get; private set; }
         public VocabularyKey SourceProvider { get; private set; }
+        public VocabularyKey DemandGroupCode { get; private set; }
         
     }
 }

@@ -19,7 +19,7 @@ namespace CluedIn.Crawling.Blackmores.ClueProducers
         protected override Clue MakeClueImpl(Banner input, Guid accountId)
         {
             var bannerVocabulary = new BannerVocabulary();
-            var clue = factory.Create(bannerVocabulary.Grouping, input.Key.ToString(), accountId);
+            var clue = factory.Create(bannerVocabulary.Grouping, input.Index.ToString(), accountId);
             var data = clue.Data.EntityData;
 
             // TODO: Uncomment or delete as appropriate for the different properties
@@ -68,12 +68,14 @@ namespace CluedIn.Crawling.Blackmores.ClueProducers
 
             //TODO: Mapping data into general properties metadata bag.
             //TODO: You should make sure as much data is mapped into specific metadata fields, rather than general .properties. bag.
+            data.Properties[bannerVocabulary.Index] = input.Index.PrintIfAvailable();
             data.Properties[bannerVocabulary.Name] = input.Name.PrintIfAvailable();
             data.Properties[bannerVocabulary.Key] = input.Key.PrintIfAvailable();
             data.Properties[bannerVocabulary.DimKey] = input.DimKey.PrintIfAvailable();
             data.Properties[bannerVocabulary.Code] = input.Code.PrintIfAvailable();
             data.Properties[bannerVocabulary.SourceRegion] = input.SourceRegion.PrintIfAvailable();
             data.Properties[bannerVocabulary.SourceProvider] = input.SourceProvider.PrintIfAvailable();
+            data.Properties[bannerVocabulary.DemandGroupCode] = input.DemandGroupCode.PrintIfAvailable();
 
             return clue;
         }

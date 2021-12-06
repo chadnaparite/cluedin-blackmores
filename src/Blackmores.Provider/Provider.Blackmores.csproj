@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
     <ProjectReference Include="..\Blackmores.Infrastructure\Crawling.Blackmores.Infrastructure.csproj" />
   </ItemGroup>
@@ -13,5 +13,6 @@
     <PackageReference Include="CluedIn.Core.Agent" />
     <PackageReference Include="CluedIn.Server.Common.WebApi" />
     <PackageReference Include="CluedIn.Agent" />
+    <PackageReference Include="CluedIn.RelatedEntities" />
   </ItemGroup>
 </Project>

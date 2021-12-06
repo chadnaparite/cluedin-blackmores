@@ -79,6 +79,7 @@ namespace CluedIn.Crawling.Blackmores.ClueProducers
             data.Properties[customerVocabulary.Country] = input.Country.PrintIfAvailable();
             data.Properties[customerVocabulary.SourceRegion] = input.SourceRegion.PrintIfAvailable();
             data.Properties[customerVocabulary.SourceProvider] = input.SourceProvider.PrintIfAvailable();
+            data.Properties[customerVocabulary.DemandGroupCode] = input.DemandGroupCode.PrintIfAvailable();
 
             return clue;
         }
