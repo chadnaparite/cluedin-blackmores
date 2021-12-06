@@ -2,7 +2,7 @@ using Newtonsoft.Json;
 
 namespace CluedIn.Crawling.Blackmores.Core.Models
 {
-    public class Customer 
+    public class Organization 
     {
         public string Id { get; set; }
         public string DemandGroup { get; set; }

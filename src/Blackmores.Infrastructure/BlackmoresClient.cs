@@ -6,6 +6,9 @@ using CluedIn.Crawling.Blackmores.Core;
 using Newtonsoft.Json;
 using RestSharp;
 using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
+using System.Reflection;
+using System.IO;
 
 namespace CluedIn.Crawling.Blackmores.Infrastructure
 {
@@ -66,5 +69,21 @@ namespace CluedIn.Crawling.Blackmores.Infrastructure
             // that uniquely identifies the account
             return new AccountInformation("", "");
         }
+
+        private IEnumerable<T> GetDataFromResourceCSV<T>(string fileName)
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            var resourceName = $"CluedIn.Crawling.Blackmores.Infrastructure.Datas.{fileName}.csv";
+
+            var datas = string.Empty;
+            using (var stream = assembly.GetManifestResourceStream(resourceName))
+            using (var reader = new StreamReader(stream))
+            {
+                datas = reader.ReadToEnd();
+            }
+
+            return JsonConvert.DeserializeObject<IEnumerable<T>>(datas);
+        }
+
     }
 }

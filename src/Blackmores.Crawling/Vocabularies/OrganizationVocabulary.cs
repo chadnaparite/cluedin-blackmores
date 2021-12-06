@@ -4,17 +4,17 @@ using CluedIn.Crawling.Blackmores.Core.Constants;
 
 namespace CluedIn.Crawling.Blackmores.Vocabularies
 {
-    public class  CustomerVocabulary : SimpleVocabulary
+    public class  OrganizationVocabulary : SimpleVocabulary
     {
-        public  CustomerVocabulary()
+        public  OrganizationVocabulary()
         {
-            VocabularyName = "Blackmores Customer"; 
-            KeyPrefix      = "blackmores.customer"; 
+            VocabularyName = "Blackmores Organization"; 
+            KeyPrefix      = "blackmores.organization"; 
             KeySeparator   = ".";
-            Grouping       = BlackmoresEntities.Customer; // TODO: Make sure EntityType is correct.
+            Grouping       = EntityType.Organization; // TODO: Make sure EntityType is correct.
 
             //TODO: Make sure that any properties mapped into CluedIn Vocabulary are not in the group.
-            AddGroup("Blackmores Customer Details", group =>
+            AddGroup("Blackmores Organization Details", group =>
             {
                 Id = group.Add(new VocabularyKey("Id", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 DemandGroup = group.Add(new VocabularyKey("DemandGroup", "Demand Group", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));

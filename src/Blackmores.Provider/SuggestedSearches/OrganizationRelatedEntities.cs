@@ -10,15 +10,15 @@ using Microsoft.Extensions.Logging;
 
 namespace CluedIn.Provider.Blackmores.SuggestedSearches
 {
-    public class CustomerRelatedEntities : IRelatedEntitiesProvider
+    public class OrganizationRelatedEntities : IRelatedEntitiesProvider
     {
         public IEnumerable<SuggestedSearch> GetRelatedEntitiesSearches(ExecutionContext context, Entity entity)
         {
             var Log = context.Log;
 
-            Log.LogInformation($"[Blackmores - Related Entities] CustomerRelatedEntitiesProvider.GetRelatedEntitiesSearches({context}, {entity})");
+            Log.LogInformation($"[Blackmores - Related Entities] OrganizationRelatedEntitiesProvider.GetRelatedEntitiesSearches({context}, {entity})");
 
-            if (entity.Type != BlackmoresEntities.Customer)
+            if (entity.Type != EntityType.Organization)
             {
                 Log.LogInformation("[Blackmores - Related Entities] Entity is not a Banner - nothing to suggest");
 

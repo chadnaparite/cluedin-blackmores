@@ -9,16 +9,16 @@ using CluedIn.Crawling.Blackmores.Core.Constants;
 
 namespace Crawling.Blackmores.Unit.Test.ClueProducers
 {
-    public class CustomerClueProducerTests : BaseClueProducerTest<Customer>
+    public class OrganizationClueProducerTests : BaseClueProducerTest<Organization>
     {
-        protected override BaseClueProducer<Customer> Sut =>
-            new CustomerClueProducer(_clueFactory.Object);
+        protected override BaseClueProducer<Organization> Sut =>
+            new OrganizationClueProducer(_clueFactory.Object);
 
-        protected override EntityType ExpectedEntityType => BlackmoresEntities.Customer;
+        protected override EntityType ExpectedEntityType => EntityType.Organization;
 
         [Theory]
         [InlineAutoData]
-        public void ClueHasEdgeToFolder(Customer customer)
+        public void ClueHasEdgeToFolder(Organization customer)
         {
             var clue = Sut.MakeClue(customer, Guid.NewGuid());
             _clueFactory.Verify(
